@@ -9,5 +9,14 @@ angular.module('templateStore', [
   'templateStore.templates'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  // $routeProvider.otherwise({redirectTo: '/templates'});?
+
+	$routeProvider
+  .when('/templates', {
+    templateUrl: 'templates/templates.html',
+    controller: 'TemplatesCtrl'
+  })
+  .when('/template/ngCart/cart', {
+    templateUrl: 'template/ngCart/cart',
+    controller: 'TemplatesCtrl'
+  }).otherwise({redirectTo: '/templates'});
 }]);
