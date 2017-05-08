@@ -3,7 +3,20 @@
 		<h3>{{template.name}}</h3>
 		<img class="img-responsive" ng-src={{template.images[0].name}}>
 		<br>
-		<br>
 		<a class="btn btn-primary btn-block" href="#/{{template.id}}">Details</a>
+		<br>
+		<!-- <div class="row">
+			<div class="col-xs-12"> -->
+				<ngcart-addtocart id="{{ template.id }}" 
+				name="{{ template.name }}" 
+				price="{{ template.price }}" 
+				quantity="1" 
+				quantity-max="30" 
+				data="template">ADD TO CART</ngcart-addtocart>
+			<!-- </div>
+		</div> -->
 	</div>
+
+
+</div>
 </div>

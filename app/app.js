@@ -16,7 +16,12 @@ config(['$routeProvider', function($routeProvider) {
     controller: 'TemplatesCtrl'
   })
   .when('/cart', {
-    templateUrl: 'template/ngCart/cart.html',
+    templateUrl: 'templates/cart.html',
     controller: 'TemplatesCtrl'
-  }).otherwise({redirectTo: '/'});
+  })
+  .when('/checkout', {
+    templateUrl: 'templates/checkout.html',
+    controller: 'TemplatesCtrl'
+  })
+  .otherwise({redirectTo: '/'});
 }]);

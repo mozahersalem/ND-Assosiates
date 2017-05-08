@@ -56,9 +56,7 @@
 }
 
 .mark, mark {
-  position: relative;
-  left: 0;
-  top: 30px;
-  padding: 15px;
-  display: none;
+  position: absolute;
+  bottom: 124px;
+  left: 15px;
 }

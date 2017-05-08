@@ -37,7 +37,7 @@
           <ul class="nav navbar-nav">
             <li><a href="#/">templates</a></li>
             <li><a href="#/cart">cart</a></li>
-            <!-- <li><a href="#/template/ngCart/chekout">Checkout</a></li> -->
+            <li><a href="#/checkout">Checkout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
        </div>
@@ -45,11 +45,9 @@
 
     <div class="container">
 
-      <ngcart-summary></ngcart-summary>
-
       <div ng-view></div>
       <ngcart-cart></ngcart-cart>
-      <!-- <ngcart-checkout service="http" settings="httpSettings">Checkout </ngcart-checkout> -->
+      <ngcart-checkout service="https" settings="httpSettings">Checkout </ngcart-checkout>
 
 
     </div><!-- /.container -->
