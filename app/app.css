@@ -34,8 +34,10 @@
   margin: auto;
 }
 
-.template-details img, .templates img {
-  width: 80%;
+.gallery-images {
+  width: 80px;
+  height: 80px;
+  margin: 15px;
 }
 
 .templates .col-md-4 {
