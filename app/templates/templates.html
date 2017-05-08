@@ -1,19 +1,9 @@
-<!-- <div class="row">
-	
-	<div class="col-xs-offset-8 col-xs-4">
-	<h3>Summary <span>(ngcart-summary)</span></h3>
-		<ngcart-summary></ngcart-summary>
-	</div>
-</div>
-<hr /> -->
-
-
 <div class="row templates">
 	<div class="col-md-4" ng-repeat="template in templates">
 		<h3>{{template.name}}</h3>
 		<img ng-src={{template.images[0].name}}>
 		<br>
 		<br>
-		<a class="btn btn-primary btn-block" href="#/templates/{{template.id}}">Details</a>
+		<a class="btn btn-primary btn-block" href="#/{{template.id}}">Details</a>
 	</div>
 </div>

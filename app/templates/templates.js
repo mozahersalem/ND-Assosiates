@@ -4,11 +4,8 @@ angular.module('templateStore.templates', ['ngRoute', 'ngCart'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
-  .when('/templates', {
-    templateUrl: 'templates/templates.html',
-    controller: 'TemplatesCtrl'
-  }).
-  when('/templates/:templateId', {
+  
+  .when('/:templateId', {
     templateUrl: 'templates/template-details.html',
     controller: 'TemplateDetailsCtrl'
   });
