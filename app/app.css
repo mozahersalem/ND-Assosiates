@@ -1,0 +1,61 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.templates {
+  text-align: center;
+}
+
+.templates a {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.template-details img, .templates img {
+  width: 80%;
+}
+
+.templates .col-md-4 {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px gray;
+}
+
+.template-details {
+  margin-top: 30px;
+}
+
+.template-images {
+  margin: 10px 0;
+}
+
+.mark, mark {
+  position: relative;
+  left: 0;
+  top: 30px;
+  padding: 15px;
+  display: none;
+}
