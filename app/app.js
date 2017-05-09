@@ -4,24 +4,40 @@
 angular.module('templateStore', [
   'ngRoute',
   'ngCart',
-  'templateStore.view1',
-  'templateStore.view2',
   'templateStore.templates'
 ]).
-config(['$routeProvider', function($routeProvider) {
-
+config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  $locationProvider.hashPrefix('!');
+  
 	$routeProvider
   .when('/', {
     templateUrl: 'templates/templates.html',
     controller: 'TemplatesCtrl'
   })
+  .when('/:templateId', {
+    templateUrl: 'templates/template-details.html',
+    controller: 'TemplateDetailsCtrl'
+  })
   .when('/cart', {
-    templateUrl: 'templates/cart.html',
-    controller: 'TemplatesCtrl'
+    templateUrl: '/cart.html',
+    controller: 'NgCartCtrl'
   })
   .when('/checkout', {
-    templateUrl: 'templates/checkout.html',
-    controller: 'TemplatesCtrl'
+    templateUrl: '/checkout.html',
+    controler: 'NgCartCtrl'
   })
-  .otherwise({redirectTo: '/'});
-}]);
+  .when('/hello', {
+    templateUrl: '/hello.html',
+    controler: 'TemplatesCtrl'
+  })
+    .otherwise({redirectTo: '/'});
+}])
+
+.controller('NgCartCtrl', NgCartCtrl);
+
+
+NgCartCtrl.$inject = ['$scope', '$http', 'ngCart'];
+function NgCartCtrl($$scope, $http, ngCart) {
+  ngCart.setTaxRate(7.5);
+  ngCart.setShipping(2.99); 
+}

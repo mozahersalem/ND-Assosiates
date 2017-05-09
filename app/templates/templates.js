@@ -2,44 +2,34 @@
 
 angular.module('templateStore.templates', ['ngRoute', 'ngCart'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-  
-  .when('/:templateId', {
-    templateUrl: 'templates/template-details.html',
-    controller: 'TemplateDetailsCtrl'
-  });
-}]).
+.controller('TemplatesCtrl', TemplatesCtrl)
+.controller('TemplateDetailsCtrl', TemplateDetailsCtrl);
 
-controller('TemplatesCtrl', ['$scope','$http', 'ngCart', function($scope, $http, ngCart) {
+
+
+
+TemplatesCtrl.$inject = ['$scope','$http', 'ngCart'];
+function TemplatesCtrl($scope, $http, ngCart) {
   $http.get('json/templates.json').success (function(data ) {
     $scope.templates = data;
   });
-}]).
 
-controller('TemplateDetailsCtrl', [
-    '$scope',
-    '$http',
-    '$routeParams',
-    '$filter',
-    'ngCart', 
-    function($scope, $http, $routeParams, $filter, ngCart ) {
-      var templateId = $routeParams.templateId;
+  ngCart.setTaxRate(7.5);
+  ngCart.setShipping(2.99);
+}
 
-      $http.get('json/templates.json').success (function(data ) {
-        $scope.template = $filter('filter')(data, function(d){
-          return d.id == templateId;
-        })[0];
-        $scope.mainImage = $scope.template.images[0].name;
-      });
+TemplateDetailsCtrl.$inject = ['$scope', '$http', '$routeParams', '$filter'];
+function TemplateDetailsCtrl($scope, $http, $routeParams, $filter) {
+  var templateId = $routeParams.templateId;
 
-      $scope.setImage = function(image) {
-        $scope.mainImage = image.name;
-      };
+  $http.get('json/templates.json').success (function(data ) {
+    $scope.template = $filter('filter')(data, function(d){
+      return d.id == templateId;
+    })[0];
+    $scope.mainImage = $scope.template.images[0].name;
+  });
 
-      ngCart.setTaxRate(7.5);
-      ngCart.setShipping(2.99);
-
-    }
-
-]);
+  $scope.setImage = function(image) {
+    $scope.mainImage = image.name;
+  };
+}
