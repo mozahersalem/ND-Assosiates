@@ -18,18 +18,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     templateUrl: 'templates/template-details.html',
     controller: 'TemplateDetailsCtrl'
   })
-  .when('/cart', {
-    templateUrl: '/cart.html',
-    controller: 'NgCartCtrl'
-  })
-  .when('/checkout', {
-    templateUrl: '/checkout.html',
-    controler: 'NgCartCtrl'
-  })
-  .when('/hello', {
-    templateUrl: '/hello.html',
-    controler: 'TemplatesCtrl'
-  })
     .otherwise({redirectTo: '/'});
 }])
 
