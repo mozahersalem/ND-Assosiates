@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 body{
-  padding: 80px;
+  padding-top: 80px;
 }
 .menu {
   list-style: none;
@@ -28,13 +28,13 @@ body{
 }
 
 .templates {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .templates a {
-  width: 50%;
+  /*width: 50%;
   text-align: center;
-  margin: auto;
+  margin: auto;*/
 }
 
 .gallery-images {
